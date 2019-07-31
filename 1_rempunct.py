@@ -14,7 +14,7 @@ class rempunct:
 		from nltk.corpus import stopwords
 		#sw = open('stopwords.txt','r').read()
 		#self.swords = sw.split()
-		self.swords = set(stopwords.words('english'))
+		self.swords = set(stopwords.words('portuguese'))
 		print(len(self.swords),"stopwords present!")
 
 	def allfiles(self,foldername):			#returns the name of all files inside the source folder. 		
