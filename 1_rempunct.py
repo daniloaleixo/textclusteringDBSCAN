@@ -29,12 +29,12 @@ class rempunct:
 		return arr
 
 	def rem_stop(self,fname,ofilename):
-		rawlines = open(fname).readlines()
+		rawlines = open(fname, 'r', encoding='utf-8', errors='ignore').readlines()
 		lenl = len(rawlines)
 		of=open(ofilename,'w')
 		for r in range(lenl):	
 			linex = rawlines[r]
-			linex2 = "".join(c for c in linex if c not in ('!','.',':',',','?',';','``','&','-','"','(',')','[',']','0','1','2','3','4','5','6','7','8','9'))
+			linex2 = "".join(str(c) for c in linex if c not in ('!','.',':',',','?',';','``','&','-','"','(',')','[',']','0','1','2','3','4','5','6','7','8','9'))
 			linex3 = linex2.split()
 			prog=(r+1)/len(rawlines)
 			for s in range(len(linex3)):	
